@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Downloading...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #f4f4f4; }
+        .btn { padding: 15px 25px; background-color: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .loader { margin-bottom: 20px; }
+    </style>
 </head>
 <body>
-    <p>Unduhan akan segera dimulai. Jika tidak, <a id="downloadLink" href="https://app99.mcdc11l.cfd/apk-download-rbtv-app" download>klik di sini</a>.</p>
+
+    <div class="loader">Menyiapkan unduhan...</div>
+    <a id="downloadLink" href="https://app99.mcdc11l.cfd/apk-download-rbtv-app" class="btn">Klik Jika Tidak Mendownload</a>
 
     <script>
+        function startDownload() {
+            var url = "https://app99.mcdc11l.cfd/apk-download-rbtv-app";
+            window.location.href = url;
+        }
+
+        // Jalankan otomatis saat aplikasi dibuka
         window.onload = function() {
-            // Memicu klik otomatis pada link download
-            document.getElementById('downloadLink').click();
-            
-            // Opsional: Redirect ke halaman lain setelah beberapa detik
-            setTimeout(function() {
-                window.location.href = "https://app99.mcdc11l.cfd/apk-download-rbtv-app";
-            }, 3000);
+            setTimeout(startDownload, 1000); // Menunggu 1 detik agar aplikasi siap
         };
     </script>
 </body>
